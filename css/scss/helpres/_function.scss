@@ -1,0 +1,16 @@
+// Disblay Flex
+@mixin flex($justify-content,$align-items){
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    @if $justify-content =="" {
+        display: flex;
+        align-items: $align-items;
+    }@else if $align-items == "" {
+        display: flex;
+        justify-content: $align-items;
+    }@else if $align-items == "" & $justify-content ==""{
+        display: flex;
+    }
+    
+}

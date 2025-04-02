@@ -1,0 +1,617 @@
+@mixin mood(){
+    &.light{
+        &.mood{
+            transition: 1s;
+            background-color: white;
+        .header{
+            transition: 1s;
+            background-color: white;
+            -webkit-box-shadow: 0 0 10px #ddd;
+            -moz-box-shadow: 0 0 10px #ddd;
+            box-shadow: 0 0 10px #ddd;
+            a{
+                color: black;
+                transition: 1s;
+            }
+            .container{
+                ul{
+                    li{
+                        .mega-menu{
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+        .landing{
+            transition: 1s;
+            &::before {
+                background-color: #ececec;
+            }
+            .container{
+                .text{
+                    h1{
+                        color: black;
+                    }
+                }
+        
+            }
+        }
+        .articles{
+            .container{
+                .box{
+                    background-color: white;
+                    .content{
+                        h3{
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+        .gallery{
+            background-color: var(--section-background);
+            .box{
+                background-color: white;
+            }
+        }
+        .features{
+            background-color: white;
+            .container{
+                .box{
+                    border-color: #CCC;
+                    background-color: white;
+                    .img-holder{
+                        &::after{
+                        border-color: transparent transparent white transparent;
+                        }
+                    }
+                }
+            }
+        }
+        .testimonials{
+            background-color: var(--section-background);
+        }
+    
+        .work-steps{
+            background-color: var(--section-background);
+        }
+        .main-title {
+            border-color: black;
+        }
+        .spikes{
+            &::after{
+                background-image: linear-gradient(135deg, white 25%, transparent 25%),
+                 linear-gradient(225deg, white 25%, transparent 25%);
+            }
+        }
+    }
+    }
+
+    &.dark{
+        &.mood{
+            background-color: black;
+            .header{
+                background-color: black;
+                -webkit-box-shadow: 0 0 10px #0000ff99;
+                -moz-box-shadow: 0 0 10px #0000ff99;
+                box-shadow: 0 0 10px #0000ff99;
+                a{
+                    color: blue;
+                    &:hover{
+                        background-color: #3d455c75;  
+                      }
+                }
+                li{
+                    .mega-menu{
+                        background-color: black;
+                    }
+                }
+            }
+            
+            .landing{
+                &::before {
+                    background-color: #9ec1d617 ;
+                }
+                .container{
+                    .text{
+                        h1{
+                            color: blue;
+                        }
+                    }
+            
+                }
+                }
+            .articles{
+                    .container{
+                        .box{
+                            background-color: #9ec1d61a;
+                            .content{
+                                h3{
+                                    color: blue;
+                                }
+                            }
+                        }
+            
+                    }
+                }
+            .gallery{
+                    background-color: #9ec1d61a;
+                    .box{
+                        background-color: #5a5b5ba3;
+                    }
+                }
+            .features{
+                    background-color: black;
+                    .container{
+                        .box{
+                            border-color: #697175;
+                            background-color: rgba(158, 193, 214, 0.1019607843);
+                            .img-holder{
+                                &::after{
+                                border-color: transparent transparent #101416 transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            .testimonials{
+                    background-color: #101416;
+               }
+            .services{
+                    background-color: #101416;
+               }
+            .our-skills{
+                .container{
+                    .skills{
+                        .skill{
+                            h3{
+                                color: blue;
+                            }
+                        }
+                    }
+                }
+               }
+            .work-steps{
+                    background-color: #101416;
+               }
+            .pricing{
+                    background-color: #101416;
+               }
+            .stats{
+                    &::before{
+                        background-color: transparent;
+                    }
+                    background-color: #101416;
+               }
+            .discount{
+                    .form{
+                        background-color: #101416;
+                        .content{
+                            h2{
+                                color: blue;
+                            }
+                        }
+                    }
+               }
+            .main-title {
+                border-color: blue;
+                color: blue;
+            }
+            .spikes{
+                &::after{
+                    background-image: linear-gradient(135deg, black 25%, transparent 25%),
+                     linear-gradient(225deg, black 25%, transparent 25%);
+                }
+            }
+            .spikes-2{
+                &::after{
+                    background-image: linear-gradient(135deg, rgba(158, 193, 214, 0.1019607843) 25%, transparent 25%),
+                                      linear-gradient(225deg, rgba(158, 193, 214, 0.1019607843) 25%, transparent 25%);
+                }
+            }
+      }
+    }
+}
+
+// .header .main-nav > li > a::before And hover
+@mixin bef(){
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: var(--main-color); 
+        top: 0;
+        left: -100%;
+        transition: var(--main-transition);
+      }
+      &:hover{
+        color: var(--main-color);
+      }
+      &:hover::before{
+        left: 0;
+      }
+}
+// header mega-menu links li::before
+@mixin bef2(){
+&::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fafafa;
+    z-index: -1;
+    transition: var(--main-transition);
+  }
+  &:hover{
+    width: 100%;
+  }
+}
+// landing:: before
+@mixin land-bef{
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -40px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: skewY(-6deg);
+        transform-origin: top left;
+    }
+}
+// .gallery .box .image::before And animation Flashing
+@mixin bef-img{
+    &.image{
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(255 255 255 / 20%);
+            width: 0;
+            height: 0;
+            opacity: 0;
+            z-index: 2;
+          }
+         &:hover::before {
+            animation: flashing 0.7s;
+          }
+         &:hover img {
+            transform: rotate(5deg) scale(1.1);
+          }
+    }
+    @keyframes flashing {
+        0%,
+        40% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          width: 200%;
+          height: 200%;
+        }
+      }
+}
+// .features .box .img-holder::befor && after
+@mixin b-a-imgHolder{
+    &.box{
+        .img-holder{
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: -1px;
+                width: 100%;
+                height: 100%;
+              }
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              border-style: solid;
+              border-width: 0px 0px 170px 500px;
+            //   border-color: transparent transparent white transparent;
+              transition: var(--main-transition);
+            }
+        }
+        &:hover {
+            .img-holder{
+                &::after{
+                    border-width: 170px 500px 170px 0;
+                }
+            }   
+        }
+
+        &.quality{
+            .img-holder{
+                &::before{
+                    background-color: rgb(244 64 54 / 60%);
+                }
+            }
+            h2{
+                &::after{
+                    background-color: #f44036;
+                }
+            }
+            a{
+                color: #f44036;
+                border-color: #f44036;
+                background: linear-gradient(to right, #f44036 50%, white 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+        }
+
+    }
+
+        &.time{
+        .img-holder{
+            &::before{
+                background-color: rgb(0 150 136 / 60%);
+            }
+        }
+        h2{
+            &::after{
+                background-color: #009688;
+            }
+        }
+        a{
+            color: #009688;
+            border-color: #009688;
+            background: linear-gradient(to right, #009688 50%, white 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+    }
+    }
+
+        &.passion{
+        .img-holder{
+            &::before{
+                background-color: rgb(3 169 244 / 60%);
+            }
+        }
+        h2{
+            &::after{
+                background-color: #03a9f4;
+            }
+        }
+        a{
+            color: #03a9f4;
+            border-color: #03a9f4;
+            background: linear-gradient(to right, #03a9f4 50%, white 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+    }
+
+}
+
+&:hover{
+    a{
+        background-position: left bottom;
+        color: white;
+    }
+}
+
+
+}
+}
+// team .box::before && after
+@mixin bef-team{
+    &::after,
+    &::before{
+        content: "";
+        background-color: #f3f3f3;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        border-radius: 10px;
+        transition: var(--main-transition);
+    }
+    &::after{
+        z-index: -1;
+        background-color: #e4e4e4;
+        width: 0;
+    }
+    &::before{
+        width: calc(100% - 60px);
+        z-index: -2;
+    }
+    &:hover{
+        &::after{
+            width: calc(100% - 60px);
+        }
+        img{
+            filter: grayscale(100%);
+        }
+        .info{
+            h3{
+                color: #777;
+            }
+        }
+    }
+    
+
+}
+// .services .box::before
+@mixin ser-bef{
+    &::before {
+        content: "";
+        left: 50%;
+        transform: translateX(-50%);
+        height: 3px;
+        top: -3px;
+        background-color: var(--main-color);
+        position: absolute;
+        width: 0;
+        transition: var(--main-transition);
+      }
+    &:hover{
+        transform: translateY(-10px);
+        &::before{
+            width: 100%;
+        }
+      }
+    &.box{
+        .info{
+            &::before{
+                content: "0" counter(services);
+                position: absolute;
+                background-color: var(--main-color);
+                color: white;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 80px;
+                font-size: 30px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-right: 15px;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                background-color: #d5d5d5;
+                top: 0;
+                left: 80px;
+                width: 50px;
+                height: calc(100% + 0.4px);
+            }
+        }
+    }
+} 
+// .work-steps .info .box::before 
+@mixin beaf-work{
+    &::before {
+        content: "";
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        width: 0;
+        height: 0;
+        transform: translate(-50%, -50%);
+        background-color: #ededed;
+        z-index: -1;
+        transition: var(--main-transition);
+      }
+    &:hover::before{
+        width: 100%;
+        height: 100%;
+    }
+}
+// focus and placeholder events .subscribe form input[type="email"]
+@mixin input{
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        transition: opacity var(--main-transition);
+    }
+    &:focus::placeholder{
+        opacity: 0;
+    }
+}
+// hover and .pricing .box::before and after
+@mixin bef-pri{
+    &::after,
+    &::before{
+        content: "";
+        width: 0;
+        height: 50%;
+        background-color: #f6f6f6;
+        position: absolute;
+        z-index: -1;
+        transition: var(--main-transition);
+    }
+    &::after{
+        right: 0;
+        bottom: 0;
+    }
+    &::before{
+        left: 0;
+        top: 0;
+    }
+    &:hover{
+        &::after,
+        &::before{
+            width: 100%;
+        }
+    }
+}
+// After and before > stats
+@mixin bef-stats{
+
+
+        &::after,
+        &::before{
+            content: "";
+            position: absolute;
+            width: 2px;
+            background-color: var(--main-color);
+            transition: 1s;
+            height: 0;
+        }
+        &::after{
+            left: 0;
+            bottom: 0;
+        }
+        &::before{
+            top: 0;
+            right: 0;
+        }
+        &:hover{
+            opacity: 1;
+            &::after,
+            &::before{
+                height: 100%;
+            }
+        }
+
+}
+
+
+//-- animation :
+
+@mixin up-and-down {
+    @keyframes up-and-down {
+        0%,
+        100% {
+          top: 0;
+        }
+        50% {
+          top: -50px;
+        }
+      }
+}
+@mixin bouncing{
+    @keyframes bouncing {
+        0%,
+        10%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40%,
+        60% {
+          transform: translateY(-15px);
+        }
+      }
+}
+// :hover .info i
+@mixin moving-arrow{
+    @keyframes moving-arrow {
+        100% {
+          transform: translateX(10px);
+        }
+      }
+}
